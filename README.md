@@ -29,14 +29,6 @@ $pdo = new BlogPDO;
 $error = null;
 $message = null;
 
-// Fletch categories
-try {
-    $query = $pdo->query("SELECT `name` FROM `categories` ORDER BY `name`");
-    $categories = $query->fetchAll();
-} catch (PDOException $e) {
-    $error = 'PDO error: ' . $e->getMessage();
-}
-
 // Posts sorting based on category selection
 try {
     if (isset($_GET['cat']) && strtolower($_GET['cat']) !== 'all') {

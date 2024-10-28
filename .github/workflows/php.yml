@@ -30,6 +30,11 @@ jobs:
 
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
+      
+    - name: CS-Fixer for PHP
+      uses: erkenes/php-cs-fixer-action@php8.3-1.0.0
+
+
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
